@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-gold: #C6A75E;
+  --color-ivory: #F5F1E8;
+  --color-black-deep: #000000;
+}
+
+@layer base {
+  body {
+    @apply bg-ivory text-black-deep font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C6A75E 0%, #E2CF95 50%, #C6A75E 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C6A75E 0%, #E2CF95 50%, #C6A75E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-lift {
+  @apply transition-transform duration-500 ease-out hover:-translate-y-2;
+}
+
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md border-b border-black/5;
+}
