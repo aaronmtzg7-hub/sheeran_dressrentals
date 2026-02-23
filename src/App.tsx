@@ -223,7 +223,7 @@ const Essence = () => {
 const Catalog = () => {
   const categories = [
     { name: 'Gala', img: 'https://picsum.photos/seed/gala/600/800', desc: 'Elegancia atemporal' },
-    { name: 'XV Años', img: 'https://picsum.photos/seed/xv/600/800', desc: 'Sueños hechos realidad' },
+    { name: 'XV Años', img: 'https://picsum.photos/seed/dog/600/800', desc: 'Sueños hechos realidad' },
     { name: 'Graduación', img: 'https://picsum.photos/seed/grad/600/800', desc: 'Tu primer gran éxito' },
     { name: 'Eventos Especiales', img: 'https://picsum.photos/seed/special/600/800', desc: 'Momentos únicos' },
   ];
