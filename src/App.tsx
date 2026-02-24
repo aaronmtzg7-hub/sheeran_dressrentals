@@ -224,10 +224,10 @@ const Essence = () => {
 
 const Catalog = () => {
   const categories = [
-    { name: "Gala", img: "https://picsum.photos/seed/gala/600/800", desc: "Elegancia atemporal", href: "/Gala" },
-    { name: "XV Años", img: "https://picsum.photos/seed/dog/600/800", desc: "Sueños hechos realidad", href: "/XVAños" },
-    { name: "Graduación", img: "https://picsum.photos/seed/grad/600/800", desc: "Tu primer gran éxito", href: "/Graduacion" },
-    { name: "Eventos Especiales", img: "https://picsum.photos/seed/special/600/800", desc: "Momentos únicos", href: "/EventosEspeciales" },
+    { name: "Gala", img: "https://picsum.photos/seed/gala/600/800", desc: "Elegancia atemporal", href: "/pages/gala.html" },
+    { name: "XV Años", img: "https://picsum.photos/seed/dog/600/800", desc: "Sueños hechos realidad", href: "/pages/xvanos.html" },
+    { name: "Graduación", img: "https://picsum.photos/seed/grad/600/800", desc: "Tu primer gran éxito", href: "/pages/graduacion.html" },
+    { name: "Eventos Especiales", img: "https://picsum.photos/seed/special/600/800", desc: "Momentos únicos", href: "/pages/eventos.html" },
   ];
 
   return (
@@ -243,8 +243,8 @@ const Catalog = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((cat, idx) => (
             <motion.a
-              key={"Gala"}
-              href={"/Gala.html"} // enlace directo a la página
+              key={cat.name}
+              href={cat.href} // enlace directo a la página
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
