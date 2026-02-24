@@ -238,13 +238,14 @@ const Catalog = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((cat, idx) => (
-            <motion.div 
+            <motion.a 
               key={cat.name}
+              href={`/vestidos?categoria=${encodeURIComponent(cat.name)}`}
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="group relative overflow-hidden rounded-xl cursor-pointer"
+              className="group relative overflow-hidden rounded-xl cursor-pointer block"
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img 
@@ -264,20 +265,22 @@ const Catalog = () => {
               <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full">
                 <span className="text-[10px] uppercase tracking-widest font-bold text-black-deep">{cat.name}</span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
         <div className="mt-20 text-center">
-          <button className="border border-gold text-gold px-12 py-4 rounded-full uppercase tracking-widest text-xs font-bold hover:bg-gold hover:text-white transition-all">
+          <a 
+            href="/vestidos" 
+            className="border border-gold text-gold px-12 py-4 rounded-full uppercase tracking-widest text-xs font-bold hover:bg-gold hover:text-white transition-all"
+          >
             Ver colección completa
-          </button>
+          </a>
         </div>
       </div>
     </section>
   );
 };
-
 const Experience = () => {
   const steps = [
     { icon: <Calendar size={32} />, title: 'Agenda tu cita', desc: 'Reserva un espacio exclusivo para ti en nuestro showroom.' },
