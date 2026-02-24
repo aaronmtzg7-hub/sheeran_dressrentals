@@ -21,6 +21,7 @@ import {
   User
 } from 'lucide-react';
 
+
 // --- Components ---
 
 const Navbar = () => {
