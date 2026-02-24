@@ -221,27 +221,30 @@ const Essence = () => {
   );
 };
 
+
 const Catalog = () => {
   const categories = [
-    { name: 'Gala', img: 'https://picsum.photos/seed/gala/600/800', desc: 'Elegancia atemporal' },
-    { name: 'XV Años', img: 'https://picsum.photos/seed/dog/600/800', desc: 'Sueños hechos realidad' },
-    { name: 'Graduación', img: 'https://picsum.photos/seed/grad/600/800', desc: 'Tu primer gran éxito' },
-    { name: 'Eventos Especiales', img: 'https://picsum.photos/seed/special/600/800', desc: 'Momentos únicos' },
+    { name: "Gala", img: "https://picsum.photos/seed/gala/600/800", desc: "Elegancia atemporal", href: "/Gala" },
+    { name: "XV Años", img: "https://picsum.photos/seed/dog/600/800", desc: "Sueños hechos realidad", href: "/XVAños" },
+    { name: "Graduación", img: "https://picsum.photos/seed/grad/600/800", desc: "Tu primer gran éxito", href: "/Graduacion" },
+    { name: "Eventos Especiales", img: "https://picsum.photos/seed/special/600/800", desc: "Momentos únicos", href: "/EventosEspeciales" },
   ];
 
   return (
     <section id="coleccion" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">Catálogo Destacado</h2>
+          <h2 className="text-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">
+            Catálogo Destacado
+          </h2>
           <h3 className="text-4xl md:text-5xl font-serif">Colecciones Exclusivas</h3>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((cat, idx) => (
-            <motion.a 
-              key={cat.name}
-              href={`/vestidos?categoria=${encodeURIComponent(cat.name)}`}
+            <motion.a
+              key={"Gala"}
+              href={"/Gala.html"} // enlace directo a la página
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -249,16 +252,18 @@ const Catalog = () => {
               className="group relative overflow-hidden rounded-xl cursor-pointer block"
             >
               <div className="aspect-[3/4] overflow-hidden">
-                <img 
-                  src={cat.img} 
-                  alt={cat.name} 
+                <img
+                  src={cat.img}
+                  alt={cat.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                 <h4 className="text-white text-2xl font-serif mb-2">{cat.name}</h4>
-                <p className="text-white/80 text-sm font-light uppercase tracking-widest mb-6">{cat.desc}</p>
+                <p className="text-white/80 text-sm font-light uppercase tracking-widest mb-6">
+                  {cat.desc}
+                </p>
                 <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white group-hover:bg-white group-hover:text-black-deep transition-all">
                   <ChevronRight size={20} />
                 </div>
@@ -271,8 +276,8 @@ const Catalog = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <a 
-            href="/vestidos" 
+          <a
+            href="/vestidos" // colección completa
             className="border border-gold text-gold px-12 py-4 rounded-full uppercase tracking-widest text-xs font-bold hover:bg-gold hover:text-white transition-all"
           >
             Ver colección completa
@@ -282,6 +287,9 @@ const Catalog = () => {
     </section>
   );
 };
+
+
+
 const Experience = () => {
   const steps = [
     { icon: <Calendar size={32} />, title: 'Agenda tu cita', desc: 'Reserva un espacio exclusivo para ti en nuestro showroom.' },
